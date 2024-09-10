@@ -1,0 +1,59 @@
+def zadanie3():
+    spisok = []
+    while True:
+        print(spisok)
+        choose = int(input("""что хотите сделать?
+                           1. обнулить список
+                           2. добавить число
+                           3. удалить число
+                           4. сумма всех чисел в списке
+                           5. поиск наибольшего и наименьшего числа в списке
+                           6. вывод всех чисел в списке в упорядоченном порядке
+                           7. вывод всех четных чисел в списке
+                           8. вывод всех нечетных чисел в списке
+                           9.выход\n\n
+                           """))
+        if choose == 1:
+            spisok = []
+        if choose == 2:
+            num = int(input("введите число: "))
+            spisok.append(num)
+        if choose == 3:
+            num = int(input("введите число(нумерация начинается с 1): "))
+            if num<=len(spisok):
+                spisok.pop(num-1)
+        if choose == 4:
+            if spisok != []:
+                print(sum(spisok))
+            else:
+                print("список пустой")
+        if choose == 5:
+            if spisok != []:
+                print(max(spisok), min(spisok))
+            else:
+                print("список пустой")
+        if choose == 6:
+            print(spisok.sort())
+        if choose == 7:
+            if spisok != []:
+                print([x for x in spisok if x%2==0])
+            else:
+                print("список пустой")
+        if choose == 8:
+            if spisok != []:
+                print([x for x in spisok if x%2==0])
+            else:
+                print("список пустой")
+        if choose == 9:
+            break
+def main():
+    while True:
+        ch = int(input("выберите задание(1, 2, 3): "))
+        if ch == 1:
+            calculator()
+        elif ch == 2:
+            n = int(input("введите число: "))
+            print(is_fib(n))
+        elif ch == 3:
+            zadanie3()
+main()
