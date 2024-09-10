@@ -1,0 +1,91 @@
+def get_float_input():
+    while True:
+        try:
+            return float(input())
+        except ValueError as va:
+            print("Ошибка ввода:", va)
+
+
+def get_nozero_input():
+    while True:
+        number = get_float_input()
+        if number == 0:
+            print("Ошибка ввода: число не должно быть нулём.")
+        else:
+            return number
+            
+
+def addition():
+    print('Введите первое слагаемое')
+    term_1 = get_float_input()
+    print('Введите второе слагаемое')
+    term_2 = get_float_input()
+    return term_1 + term_2
+
+
+def subtraction():
+    print('Введите уменьшаемое')
+    minuend = get_float_input()
+    print('Введите вычитаемое')
+    subtrahend = get_float_input()
+    return minuend - subtrahend
+
+
+def multiplication():
+    print('Введите первый множитель')
+    multiplier_1 = get_float_input()
+    print('Введите второй множитель')
+    multiplier_2 = get_float_input()
+    return multiplier_1 * multiplier_2
+
+
+def division():
+    print('Введите делимое')
+    dividend = get_float_input()
+    print('Введите делитель')
+    divisor = get_nozero_input()
+    return dividend / divisor
+
+
+def exponentiation():
+    print('Введите число')
+    number = get_float_input()
+    print('Введите степень')
+    power = get_float_input()
+    return number ** power
+
+
+def rounding_s():
+    print('Введите число')
+    number = get_float_input()
+    return number - number % 1
+
+
+def rounding_b():
+    print('Введите число')
+    number = get_float_input()
+    return number - number % 1 + 1
+
+
+def calc():
+    operation = input('введите необходимую функцию')
+    operation = operation.lower()
+    if operation == 'сложение':
+        print('результат:', addition())
+    elif operation == 'вычитание':
+        print('результат:',subtraction())
+    elif operation == 'умножение':
+        print('результат:',multiplication())
+    elif operation == 'деление':
+        print('результат:',division())
+    elif operation == 'возведение в степень':
+        print('результат:',exponentiation())
+    elif operation == 'округление в меньшую сторону до целого':
+        print('результат:',rounding_s())
+    elif operation == 'округление в большую сторону до целого':
+        print('результат:',rounding_b())
+    else:
+        print('такой операции нет')
+
+
+calc()
