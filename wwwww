@@ -1,0 +1,24 @@
+n = int(input())
+a = 0
+b = 1
+k = 0
+if n == 0:
+    print('да')
+while a+b <= n:
+    if k == 0:
+        a = b + a
+        k = 1
+        print(a)
+        if a+b == n:
+            print('да')
+            break
+    if k == 1:
+        b = b + a
+        k = 0
+        print(b)
+        if a+b == n:
+            print('да')
+            break
+if a+b > n:
+    print('нет')
+    
